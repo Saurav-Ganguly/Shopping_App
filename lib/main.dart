@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           //generate primary secordary colors
           seedColor: const Color.fromRGBO(254, 206, 1, 1),
+          primary: const Color.fromRGBO(254, 206, 1, 1),
         ),
         inputDecorationTheme: const InputDecorationTheme(
           hintStyle: TextStyle(
