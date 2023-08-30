@@ -7,6 +7,7 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cart = context.watch<CartProvider>().cart;
     // print(Provider.of<String>(context)); //Provider<String>
     //print(Provider.of<CartProvider>(context).cart);
     return Scaffold(
@@ -15,9 +16,9 @@ class CartPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: Provider.of<CartProvider>(context).cart.length,
+        itemCount: cart.length,
         itemBuilder: (context, index) {
-          final cartItem = Provider.of<CartProvider>(context).cart[index];
+          final cartItem = cart[index];
 
           return ListTile(
             leading: CircleAvatar(
@@ -50,10 +51,13 @@ class CartPage extends StatelessWidget {
                       actions: [
                         TextButton(
                           onPressed: () {
-                            Provider.of<CartProvider>(
-                              context,
-                              listen: false,
-                            ).removeProduct(cartItem);
+                            context //short hand syntax
+                                .read<CartProvider>()
+                                .removeProduct(cartItem);
+                            // Provider.of<CartProvider>(
+                            //   context,
+                            //   listen: false,
+                            // ).removeProduct(cartItem);
                             Navigator.of(context)
                                 .pop(); //removes the dialog box
                           },

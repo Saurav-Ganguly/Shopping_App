@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
   //FutueProvider - listen to future, subscribe to them
   //Stream Provider - providing are stream
 
+  //for multiple providers
+  //use multiprovider
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
