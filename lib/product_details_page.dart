@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_app/cart_provider.dart';
 
 class ProductDetailsPage extends StatefulWidget {
   final Map<String, dynamic> product;
@@ -14,6 +16,26 @@ class ProductDetailsPage extends StatefulWidget {
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
   int? selectedSize;
+
+  void addNewCartItem(cartItem) {
+    if (selectedSize != null) {
+      //access the addProduct method on the class CartProvider
+      Provider.of<CartProvider>(context, listen: false).addProduct(cartItem);
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Product added successfully!'),
+        ),
+      );
+    } else {
+      //show error on size not selected
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please select a size!'),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +116,17 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                         50,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Map<String, dynamic> newCartItem = {
+                        'id': widget.product['id'],
+                        'title': widget.product['title'],
+                        'price': widget.product['price'],
+                        'size': selectedSize,
+                        'imageUrl': widget.product['imageUrl'],
+                        'company': widget.product['company'],
+                      };
+                      addNewCartItem(newCartItem);
+                    },
                     label: const Text(
                       'Add To Cart',
                       style: TextStyle(
