@@ -3,7 +3,7 @@ final List<Map<String, dynamic>> products = [
     'id': 0,
     'title': 'Men\'s Nike Shoes',
     'price': 44.2,
-    'sizes': [8, 9, 10, 11, 12, 12, 16, 17],
+    'sizes': [8, 9, 10, 11, 12, 16, 17],
     'imageUrl': 'assets/images/shoe1.png',
     'company': 'Nike',
   },
