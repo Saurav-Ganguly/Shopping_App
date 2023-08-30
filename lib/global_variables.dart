@@ -33,12 +33,12 @@ final List<Map<String, dynamic>> products = [
   }
 ];
 
-final cart = [
+final List<Map<String, dynamic>> cart = [
   {
     'id': 3,
     'title': 'Adidas Women\'s Shoes',
     'price': 14.2,
-    'sizes': [8, 9],
+    'size': 8,
     'imageUrl': 'assets/images/shoe4.png',
     'company': 'Adidas',
   }
