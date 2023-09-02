@@ -1,16 +1,21 @@
-# shop_app
+# Shopping App
 
-A new Flutter project.
+A shopping app made in Rivaan Ranawat's Udemy Course
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+### Home Page
 
-A few resources to get you started if this is your first Flutter project:
+<img src="https://i.imgur.com/CyDLUcv.png">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Products Details Page
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://i.imgur.com/5e10qYq.png">
+
+### Cart Page
+
+<img src="https://i.imgur.com/IIkNybe.png">
+
+### Cart Item Delete Dialog Box
+
+<img src="https://i.imgur.com/IPMluU0.png">
